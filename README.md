@@ -19,7 +19,8 @@ First use pip install nnunetv2 to install the nnunetv2
 <br>    └── labelsTr
 <br>here is my dataset: https://drive.google.com/drive/folders/1zosHCChzDGDybqZnzmv1Prcb0szhwNhD?usp=drive_link
 <br>I use colab to do this assignment, the gpu is A100.
-<br>and I use```python  
+<br>and I use
+```python  
 !nnUNetv2_plan_and_preprocess -d 137 --verify_dataset_integrity
 ``` 
 to run fingerprint extraction, experiment planning and preprocessing.
