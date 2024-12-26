@@ -45,10 +45,12 @@ First use pip install nnunetv2 to install the nnunetv2
 <br> !nnUNetv2_ensemble -i /content/drive/MyDrive/DATASET/BraTS2021_2d_predict /content/drive/MyDrive/DATASET/BraTS2021_3d_fullres_predict -o /content/drive/MyDrive/DATASET/BRATS2021_ensemble
 ```
 <br>Finally, apply the previously determined postprocessing to the (ensembled) predictions:
-<br>  ```python !nnUNetv2_apply_postprocessing -i /content/drive/MyDrive/DATASET/BRATS2021_ensemble  -o /content/drive/MyDrive/DATASET/BRATS2021_ensemble_pp -pp_pkl_file  /content/drive/MyDrive/DATASET/nnUNet_results/Dataset137_BraTS2021/nnUNetTrainer_10epochs__nnUNetPlans__2d/crossval_results_folds_0_1_2_3_4/postprocessing.pkl -np 8 -plans_json  /content/drive/MyDrive/DATASET/nnUNet_results/Dataset137_BraTS2021/nnUNetTrainer_10epochs__nnUNetPlans__2d/crossval_results_folds_0_1_2_3_4/plans.json  -dataset_json /content/drive/MyDrive/DATASET/nnUNet_results/Dataset137_BraTS2021/nnUNetTrainer_10epochs__nnUNetPlans__2d/crossval_results_folds_0_1_2_3_4/dataset.json
+```python
+<br>  !nnUNetv2_apply_postprocessing -i /content/drive/MyDrive/DATASET/BRATS2021_ensemble  -o /content/drive/MyDrive/DATASET/BRATS2021_ensemble_pp -pp_pkl_file  /content/drive/MyDrive/DATASET/nnUNet_results/Dataset137_BraTS2021/nnUNetTrainer_10epochs__nnUNetPlans__2d/crossval_results_folds_0_1_2_3_4/postprocessing.pkl -np 8 -plans_json  /content/drive/MyDrive/DATASET/nnUNet_results/Dataset137_BraTS2021/nnUNetTrainer_10epochs__nnUNetPlans__2d/crossval_results_folds_0_1_2_3_4/plans.json  -dataset_json /content/drive/MyDrive/DATASET/nnUNet_results/Dataset137_BraTS2021/nnUNetTrainer_10epochs__nnUNetPlans__2d/crossval_results_folds_0_1_2_3_4/dataset.json
 ```
 <br>nnU-Net's performance in comparison to the BraTS baseline,I use 
-<br>  ```python !nnUNetv2_evaluate_folder -djfile /content/drive/MyDrive/DATASET/nnUNet_raw/Dataset137_BraTS2021/dataset.json  -pfile /content/drive/MyDrive/DATASET/nnUNet_results/Dataset137_BraTS2021/nnUNetTrainer_10epochs__nnUNetPlans__2d/crossval_results_folds_0_1_2_3_4/plans.json    /content/drive/MyDrive/DATASET/nnUNet_raw/Dataset137_BraTS2021/labelsTs  /content/drive/MyDrive/DATASET/BRATS2021_ensemble_pp
+```python
+<br>   !nnUNetv2_evaluate_folder -djfile /content/drive/MyDrive/DATASET/nnUNet_raw/Dataset137_BraTS2021/dataset.json  -pfile /content/drive/MyDrive/DATASET/nnUNet_results/Dataset137_BraTS2021/nnUNetTrainer_10epochs__nnUNetPlans__2d/crossval_results_folds_0_1_2_3_4/plans.json    /content/drive/MyDrive/DATASET/nnUNet_raw/Dataset137_BraTS2021/labelsTs  /content/drive/MyDrive/DATASET/BRATS2021_ensemble_pp
 ```
 <br>it He stored the results in summary.json in BRATS2021_ensemble_pp, including Dice Score, FN, FP, TN, TP, and IoU 。
 <br>And the last part I calculate the Hausdorff Distance.
