@@ -45,13 +45,13 @@ So nnU-Net trains all configurations in a 5-fold cross-validation over the train
 ```
 <br>then nnU-Net can automatically identify the best combination 
 ```python 
-<br>  !nnUNetv2_find_best_configuration Dataset137_BraTS2021 -c 2d  3d_fullres -tr nnUNetTrainer_10epochs -f 0 1 2 3 4
+!nnUNetv2_find_best_configuration Dataset137_BraTS2021 -c 2d  3d_fullres -tr nnUNetTrainer_10epochs -f 0 1 2 3 4
 ```
 <br>then run inference
  ```python 
-<br>!nnUNetv2_predict -d Dataset137_BraTS2021 -i /content/drive/MyDrive/DATASET/nnUNet_raw/Dataset137_BraTS2021/imagesTs -o /content/drive/MyDrive/DATASET/BraTS2021_2d_predict -f  0 1 2 3 4 -tr nnUNetTrainer_10epochs -c 2d -p nnUNetPlans --save_probabilities
-<br> !nnUNetv2_predict -d Dataset137_BraTS2021 -i /content/drive/MyDrive/DATASET/nnUNet_raw/Dataset137_BraTS2021/imagesTs -o /content/drive/MyDrive/DATASET/BraTS2021_3d_fullres_predict -f  0 1 2 3 4 -tr nnUNetTrainer_10epochs -c 3d_fullres -p nnUNetPlans --save_probabilities 
-<br> !nnUNetv2_ensemble -i /content/drive/MyDrive/DATASET/BraTS2021_2d_predict /content/drive/MyDrive/DATASET/BraTS2021_3d_fullres_predict -o /content/drive/MyDrive/DATASET/BRATS2021_ensemble
+!nnUNetv2_predict -d Dataset137_BraTS2021 -i /content/drive/MyDrive/DATASET/nnUNet_raw/Dataset137_BraTS2021/imagesTs -o /content/drive/MyDrive/DATASET/BraTS2021_2d_predict -f  0 1 2 3 4 -tr nnUNetTrainer_10epochs -c 2d -p nnUNetPlans --save_probabilities
+!nnUNetv2_predict -d Dataset137_BraTS2021 -i /content/drive/MyDrive/DATASET/nnUNet_raw/Dataset137_BraTS2021/imagesTs -o /content/drive/MyDrive/DATASET/BraTS2021_3d_fullres_predict -f  0 1 2 3 4 -tr nnUNetTrainer_10epochs -c 3d_fullres -p nnUNetPlans --save_probabilities 
+!nnUNetv2_ensemble -i /content/drive/MyDrive/DATASET/BraTS2021_2d_predict /content/drive/MyDrive/DATASET/BraTS2021_3d_fullres_predict -o /content/drive/MyDrive/DATASET/BRATS2021_ensemble
 ```
 <br>Finally, apply the previously determined postprocessing to the (ensembled) predictions:
 ```python
