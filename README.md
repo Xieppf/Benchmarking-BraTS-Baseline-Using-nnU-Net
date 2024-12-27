@@ -3,7 +3,7 @@
 First use pip install nnunetv2 to install the nnunetv2
 <br>I download the BraTS2021 dataset from https://aistudio.baidu.com/datasetdetail/182344
 <br>I selected the first fifteen data as the training set and the last ten data as the test set. 
-<br>Run Dataset137_BraTS21.py in the terminal to generate a training dataset that meets the requirements of nnunet
+<br>Run Dataset137_BraTS21.py in the terminal to generate a training dataset that meets the requirements of nnunet. Just change the path of nnUnet_raw and brats_data_dir.
 <br>  nnUNet_raw/
 <br>  ├── Dataset001_BrainTumour
 <br>    ├── dataset.json
